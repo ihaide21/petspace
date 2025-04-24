@@ -314,40 +314,7 @@
 
     <!-- after fooder adding this to see if i works -->
 
-    <!-- <script>
-        function openModal(src, alt) {
-          const modal = document.getElementById('imageModal');
-          const modalImg = document.getElementById('modalImage');
-          const modalCaption = document.getElementById('modalCaption');
-      
-          modal.classList.remove('hidden');
-          modal.classList.remove('opacity-0');
-          modal.classList.add('opacity-100');
-          modalImg.src = src;
-          modalCaption.textContent = alt;
-        }
-      
-        function closeModal() {
-          const modal = document.getElementById('imageModal');
-          modal.classList.add('opacity-0');
-          setTimeout(() => modal.classList.add('hidden'), 300);
-        }
-      
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape') {
-            closeModal();
-          }
-        });
-      
-        document.getElementById('imageModal').addEventListener('click', function (e) {
-          if (e.target.id === 'imageModal') {
-            closeModal();
-          }
-        });
-      </script> -->
-
-
-
+  
 <!-- adding till here -->
     <script>
         // Simple smooth scrolling for navigation links
@@ -425,63 +392,3 @@
 <p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=ihaide/petspace" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
 </html>
 
-<!-- ✅ 2. Add the Modal HTML (once at the bottom of <body>)
-<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm hidden flex justify-center items-center z-50">
-    <div class="relative max-w-4xl w-full px-4">
-      <span class="absolute top-4 right-4 text-white text-3xl cursor-pointer" onclick="closeModal()">&times;</span>
-      <img id="modalImage" src="" alt="" class="rounded-lg w-full max-h-[80vh] object-contain mx-auto">
-      <p id="modalCaption" class="text-white text-center mt-4 text-lg"></p>
-    </div>
-  </div>
-  <script>
-  function openModal(src, caption) {
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-    const modalCaption = document.getElementById('modalCaption');
-
-    modal.classList.remove('hidden');
-    modalImg.src = src;
-    modalCaption.textContent = caption;
-  }
-
-  function closeModal() {
-    document.getElementById('imageModal').classList.add('hidden');
-  }
-
-  // Close modal when clicking the dark background
-  document.getElementById('imageModal').addEventListener('click', function(e) {
-    if (e.target === this) {
-      closeModal();
-    }
-  });
-</script>
-
-<script>
-    function openModal(src, caption) {
-      const modal = document.getElementById('imageModal');
-      const modalImg = document.getElementById('modalImage');
-      const modalCaption = document.getElementById('modalCaption');
-  
-      modal.classList.remove('hidden');
-      modalImg.src = src;
-      modalCaption.textContent = caption;
-    }
-  
-    function closeModal() {
-      document.getElementById('imageModal').classList.add('hidden');
-    }
-  
-    // Close modal when clicking outside the image
-    document.getElementById('imageModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeModal();
-      }
-    });
-  
-    // ✅ Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeModal();
-      }
-    });
-  </script> -->
