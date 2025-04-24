@@ -89,9 +89,56 @@
                     </div>
                   </div>
 
+                                  <!-- starting here --> for full image
 
+<!-- GALLERY ITEM -->
+<div class="gallery-item overflow-hidden rounded-lg shadow-lg cursor-pointer" onclick="openModal('images/elmer.jpeg', 'elmer doggo')">
+    <img 
+      src="images/elmer.jpeg" 
+      alt="elmer doggo" 
+      class="w-full h-72 object-cover transform transition-transform duration-300 hover:scale-105"
+    >
+    <div class="p-4 bg-gray-50">
+      <h3 class="font-semibold text-lg">doggo</h3>
+      <p class="text-gray-600">Elmo</p>
+    </div>
+  </div>
+  
+  <!-- MODAL STRUCTURE (Place this once at the bottom of your page) -->
+  <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-70 hidden justify-center items-center z-50">
+    <div class="relative max-w-4xl w-full px-4">
+      <span class="absolute top-4 right-4 text-white text-3xl cursor-pointer" onclick="closeModal()">&times;</span>
+      <img id="modalImage" src="" alt="" class="rounded-lg w-full max-h-[90vh] object-contain mx-auto">
+      <p id="modalCaption" class="text-white text-center mt-4 text-lg"></p>
+    </div>
+  </div>
+  
+  <!-- SCRIPT (Place this at the end of body or in a <script> tag) -->
+  <script>
+    function openModal(src, alt) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      const modalCaption = document.getElementById('modalCaption');
+  
+      modal.classList.remove('hidden');
+      modalImg.src = src;
+      modalCaption.textContent = alt;
+    }
+  
+    function closeModal() {
+      const modal = document.getElementById('imageModal');
+      modal.classList.add('hidden');
+    }
+  
+    // Optional: close modal when clicking outside image
+    document.getElementById('imageModal').addEventListener('click', function (e) {
+      if (e.target.id === 'imageModal') {
+        closeModal();
+      }
+    });
+  </script>
 
-
+<!-- full image code ends here -->
                 <div class="gallery-item overflow-hidden rounded-lg shadow-lg">
                    <!-- <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3" alt="Dog running" class="w-full h-64 object-cover">-->
                    <img src ="images/moomin.jpeg" alt = "Moomin" class = "w-full h-72 object-cover"> 
