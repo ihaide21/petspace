@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- <h1 class="text-4xl font-bold" style="font-family: 'Poppins', sans-serif;">Paws & Pixels</h1> -->
+    <title>Paws & Pixels | Pet Photography</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/blur.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-indigo-600">
+                    <i class="fas fa-paw mr-2"></i>
+                    Pawsss & Pixels
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-800 hover:text-indigo-600">Home</a>
+                    <a href="#gallery" class="text-gray-800 hover:text-indigo-600">Gallery</a>
+                    <a href="#about" class="text-gray-800 hover:text-indigo-600">About</a>
+                    <a href="#contact" class="text-gray-800 hover:text-indigo-600">Contact</a>
+                </div>
+                <button class="md:hidden focus:outline-none">
+                    <i class="fas fa-bars text-2xl text-gray-800"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero h-96 flex items-center justify-center text-center text-white">
+        <div class="px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Capturing Pet Personalities</h1>
+            <p class="text-xl mb-8">Professional photography for your furry friends</p>
+            <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-full font-medium">
+                Book a Session
+            </button>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Gallery</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              
+                <!-- Replace these with your actual pet photos -->
+                <div class="gallery-item cursor-pointer" onclick="openModal('images/puppy.jpeg', 'Leo')">
+                    <img src="images/puppy.jpeg" alt="leo puppy" class="w-full h-72 object-cover">
+                    <div class="p-4 bg-gray-50">
+                        <h3 class="font-semibold text-lg">Leo</h3>
+                        <p class="text-gray-600">Australian Shepherd</p>
+                    </div>
+                </div>
+                <div class="gallery-item cursor-pointer" onclick="openModal('images/elmer.jpeg', 'Elmer - Elmo')">
+                <img src="images/elmer.jpeg" alt="elmer doggo" class = "w-full h-72 object-cover">
+                   <div class="p-4 bg-gray-50">
+                        <h3 class="font-semibold text-lg">Elmer</h3>
+                        <p class="text-gray-600">Elmo</p>
+                    </div>
+                </div>
+
+<!-- full image code ends here -->
+                <div class="gallery-item cursor-pointer" onclick="openModal('images/moomin.jpeg', 'Elmer - Elmo')">
+                   <img src ="images/moomin.jpeg" alt = "Moomin" class = "w-full h-72 object-cover"> 
+                   <div class="p-4 bg-gray-50">
+                        <h3 class="font-semibold text-lg">Moomin</h3>
+                        <p class="text-gray-600">Australian Shepherd</p>
+                    </div>
+                </div>
+                <!-- <div class="gallery-item overflow-hidden rounded-lg shadow-lg"> -->
+                    <div class="gallery-item cursor-pointer" onclick="openModal('images/leosnow.jpeg', 'Elmer - Elmo')">
+                    <img src ="images/leosnow.jpeg" alt = "LeoinSnow" class = "w-full h-65 object-cover"> 
+                    <div class="p-4 bg-gray-50">
+                        <h3 class="font-semibold text-lg">Leo</h3>
+                        <p class="text-gray-600">Australian Shepherd</p>
+                    </div>
+                </div>
+                <div class="gallery-item cursor-pointer" onclick="openModal('images/maggie.jpeg', 'Elmer - Elmo')">
+                    <img src ="images/maggie.jpeg" alt = "Maggie" class = "w-full h-65 object-cover">
+                    <div class="p-4 bg-gray-50">
+                        <h3 class="font-semibold text-lg">Maggie</h3>
+                        <p class="text-gray-600">Brittany Spaniel</p>
+                    </div>
+                </div>
+                <div class="gallery-item cursor-pointer" onclick="openModal('images/tippet.jpeg', 'Elmer - Elmo')">
+                    <!-- <img src="https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-4.0.3" alt="Cat playing" class="w-full h-64 object-cover"> -->
+                   <img src ="images/tippet.jpeg" alt = "Tippet" class = "w-full h-65 object-cover">
+                   <div class="p-4 bg-gray-50">
+                        <h3 class="font-semibold text-lg">Tippet</h3>
+                        <p class="text-gray-600">Lab</p>
+                    </div>
+                </div>
+               <!-- addding extra Dogs here -->
+               <div class="gallery-item cursor-pointer" onclick="openModal('images/browni.jpeg', 'Elmer - Elmo')">
+                <img src ="images/browni.jpeg" alt = "Azuki" class = "w-full h-74 object-cover">
+                    <div class="p-4 bg-gray-50">
+                         <h3 class="font-semibold text-lg">Browni</h3>
+                         <p class="text-gray-600">Pomeranian, Siberian Husky</p>
+                     </div>
+                </div>
+                <div class="gallery-item cursor-pointer" onclick="openModal('images/rossie.jpeg', 'Elmer - Elmo')">
+                    <img src ="images/rossie.jpeg" alt = "Roosie" class = "w-full h-74 object-cover">
+                    <div class="p-4 bg-gray-50">
+                         <h3 class="font-semibold text-lg">Roosie</h3>
+                         <p class="text-gray-600">Australian Shepherd</p>
+                     </div>     
+                 </div>
+                 <!--new dog here-->
+                 <div class="gallery-item cursor-pointer" onclick="openModal('images/leo1.jpg', 'Elmer - Elmo')">
+                    <img src ="images/leo1.JPG" alt = "Mila" class = "w-full h-80 object-cover">
+                    <div class="p-4 bg-gray-50">
+                         <h3 class="font-semibold text-lg">Mila</h3>
+                         <p class="text-gray-600">Weimaraner</p>
+                     </div>     
+                 </div>
+
+                 <div class="gallery-item cursor-pointer" onclick="openModal('images/new images to add/brisket1.jpeg', 'Elmer - Elmo')">
+                    <img src ="images/new images to add/brisket1.jpeg" alt = "Mila" class = "w-full h-80 object-cover">
+                    <div class="p-4 bg-gray-50">
+                         <h3 class="font-semibold text-lg">Brisket</h3>
+                         <p class="text-gray-600">Weimaraner</p>
+                     </div>     
+                 </div>
+<!-- add 5 new images -->
+                 <div class="gallery-item cursor-pointer" onclick="openModal('images/new images to add/brisket2.jpeg', 'Elmer - Elmo')">
+                    <!-- <img src="https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-4.0.3" alt="Cat playing" class="w-full h-64 object-cover"> -->
+                    <img src ="images/new images to add/brisket2.jpeg" alt = "Mila" class = "w-full h-80 object-cover">
+                    <div class="p-4 bg-gray-50">
+                         <h3 class="font-semibold text-lg">Brisket</h3>
+                         <p class="text-gray-600">Weimaraner</p>
+                     </div>     
+                 </div>
+                 <div class="gallery-item cursor-pointer" onclick="openModal('images/new images to add/gordon2.jpeg', 'Elmer - Elmo')">
+                    <img src ="images/new images to add/gordon2.jpeg" alt = "Mila" class = "w-full h-80 object-cover">
+                    <div class="p-4 bg-gray-50">
+                         <h3 class="font-semibold text-lg">Brisket</h3>
+                         <p class="text-gray-600">Weimaraner</p>
+                     </div>     
+                 </div>
+                 <div class="gallery-item cursor-pointer" onclick="openModal('images/new images to add/gordon1.jpeg', 'Elmer - Elmo')">
+                    <img src ="images/new images to add/gordon1.jpeg" alt = "Mila" class = "w-full h-80 object-cover">
+                    <div class="p-4 bg-gray-50">
+                         <h3 class="font-semibold text-lg">Brisket</h3>
+                         <p class="text-gray-600">Weimaraner</p>
+                     </div>     
+                 </div>
+                 <div class="gallery-item cursor-pointer" onclick="openModal('images/new images to add/Azuki1.jpeg', 'Elmer - Elmo')">
+                    <img src ="images/new images to add/Azuki1.jpeg" alt = "Mila" class = "w-full h-80 object-cover">
+                    <div class="p-4 bg-gray-50">
+                         <h3 class="font-semibold text-lg">Brisket</h3>
+                         <p class="text-gray-600">Weimaraner</p>
+                     </div>     
+                 </div>
+                 <div class="gallery-item cursor-pointer" onclick="openModal('images/new images to add/leoball.jpeg', 'Elmer - Elmo')">
+                    <img src ="images/new images to add/leoball.jpeg" alt = "Mila" class = "w-full h-80 object-cover">
+                    <div class="p-4 bg-gray-50">
+                         <h3 class="font-semibold text-lg">Brisket</h3>
+                         <p class="text-gray-600">Weimaraner</p>
+                     </div>     
+                 </div>
+                 <div class="gallery-item cursor-pointer" onclick="openModal('images/new images to add/gordon3.jpeg', 'Elmer - Elmo')">
+
+                    <img src ="images/new images to add/gordon3.jpeg" alt = "Mila" class = "w-full h-80 object-cover">
+                    <div class="p-4 bg-gray-50">
+                         <h3 class="font-semibold text-lg">Brisket</h3>
+                         <p class="text-gray-600">Weimaraner</p>
+                     </div>     
+                 </div>
+                 <div class="gallery-item cursor-pointer" onclick="openModal('images/new images to add/ruby1.jpeg', 'Elmer - Elmo')">
+                    <img src ="images/new images to add/ruby1.jpeg" alt = "Mila" class = "w-full h-80 object-cover">
+                    <div class="p-4 bg-gray-50">
+                         <h3 class="font-semibold text-lg">Brisket</h3>
+                         <p class="text-gray-600">Weimaraner</p>
+                     </div>     
+                 </div>
+                 <div class="gallery-item cursor-pointer" onclick="openModal('images/new images to add/poppy1.jpeg', 'Elmer - Elmo')">
+                    <img src ="images/new images to add/poppy1.jpeg" alt = "Mila" class = "w-full h-80 object-cover">
+                    <div class="p-4 bg-gray-50">
+                         <h3 class="font-semibold text-lg">Brisket</h3>
+                         <p class="text-gray-600">Weimaraner</p>
+                     </div>     
+                 </div>
+                 <div class="gallery-item cursor-pointer" onclick="openModal('images/new images to add/poppy2.jpeg', 'Elmer - Elmo')">
+                    <img src ="images/new images to add/poppy2.jpeg" alt = "Mila" class = "w-full h-80 object-cover">
+                    <div class="p-4 bg-gray-50">
+                         <h3 class="font-semibold text-lg">Brisket</h3>
+                         <p class="text-gray-600">Weimaraner</p>
+                     </div>     
+                 </div>
+                 <div class="gallery-item cursor-pointer" onclick="openModal('images/new images to add/poppy3.jpeg', 'Elmer - Elmo')">
+                    <img src ="images/new images to add/poppy3.jpeg" alt = "Mila" class = "w-full h-80 object-cover">
+                    <div class="p-4 bg-gray-50">
+                         <h3 class="font-semibold text-lg">Brisket</h3>
+                         <p class="text-gray-600">Weimaraner</p>
+                     </div>     
+                 </div>
+                 <div class="gallery-item cursor-pointer" onclick="openModal('images/new images to add/test.jpeg', 'Elmer - Elmo')">
+                    <img src ="images/new images to add/test.jpeg" alt = "Mila" class = "w-full h-80 object-cover">
+                    <div class="p-4 bg-gray-50">
+                         <h3 class="font-semibold text-lg">eating Poppy</h3>
+                         <p class="text-gray-600">Weimaraner</p>
+                     </div>     
+                 </div>
+<!-- adding new code here for enlaged images -->
+                <div class="gallery-item cursor-pointer" onclick="openModal('images/elmer.jpeg', 'Elmer - Elmo')">
+                    <img src="images/Tippet2.jpeg" alt="elmer doggo" class="w-full h-96 object-cover rounded-lg shadow-lg">
+                    <div class="p-4 bg-gray-50">
+                    <h3 class="font-semibold text-lg">Elmer</h3>
+                    <p class="text-gray-600">Tippet</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item cursor-pointer" onclick="openModal('images/new images to add/Azuki1.jpeg', 'Elmer - Elmo')">
+                    <img src ="images/new images to add/Azuki1.jpeg" alt = "Mila" class = "w-full h-96 object-cover">
+                    <div class="p-4 bg-gray-50">
+                         <h3 class="font-semibold text-lg">Azukii</h3>
+                         <p class="text-gray-600">Azuki Husky</p>
+                     </div>     
+                 </div>
+                 <div class="gallery-item cursor-pointer" onclick="openModal('images/new images to add/Azuki1.jpeg', 'Elmer - Elmo')">
+                    <!-- <img src ="images/Cookie.jpeg" alt = "Mila" class = "w-full h-96 object-cover"> -->
+                    <img src="images/LeoPark.jpeg" alt="Mila" class="w-full h-96 object-contain rounded-lg shadow-lg">
+                    <div class="p-4 bg-gray-50">
+                         <h3 class="font-semibold text-lg">Brisket</h3>
+                         <p class="text-gray-600">Azuki three</p>
+                     </div>     
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
+                    <div class="gallery-item cursor-pointer" onclick="openModal('images/profile.jpeg', 'Elmer - Elmo')">
+                        <img src="images/profile.jpeg" alt="elmer doggo" class="rounded-lg shadow-lg w-50 h-72 object-cover">
+                      </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">About Me</h2>
+                    <p class="text-gray-600 mb-4">
+                        Hi, I'm Sarah! I've been a professional pet photographer for over 8 years. My passion is capturing the unique personality of every animal I photograph.
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        I specialize in natural light photography that brings out the true character of your pets. Whether it's a playful puppy or a dignified senior cat, I'll create images you'll treasure forever.
+                    </p>
+                    <p class="text-gray-600">
+                        My studio is pet-friendly and equipped with everything needed to make your furry friend comfortable during their photo session.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <!-- <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Get In Touch</h2>
+            <div class="max-w-2xl mx-auto"> -->
+                <!-- <div class="container mx-auto px-6">
+                    <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Get In Touch</h2> -->
+                  
+                    <div class="max-w-2xl mx-auto text-center">
+                      <!-- Add your Google Form link here -->
+                      <a 
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSeNS5sh6JhF11xpGHho2Mj7BCf-xR6KezvQ0cqM7F1_qsEDDw/viewform?usp=sharing" 
+                        target="_blank"
+                        class="inline-block"
+                      >
+                        <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full text-lg font-medium transition">
+                          Get In Touch
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-2xl font-bold mb-4 md:mb-0">
+                    <i class="fas fa-paw mr-2"></i>
+                    Paws & Pixels
+                </div>
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <a href="#" class="hover:text-indigo-400"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-indigo-400"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-indigo-400"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-indigo-400"><i class="fab fa-pinterest"></i></a>
+                </div>
+                <div class="text-sm">
+                    &copy; 2023 Paws & Pixels. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- after fooder adding this to see if i works -->
+
+  
+<!-- adding till here -->
+    <script>
+        // Simple smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+✅ 2. Add the Modal HTML (once at the bottom of <body>)
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm hidden flex justify-center items-center z-50">
+        <div class="relative max-w-4xl w-full px-4">
+          <span class="absolute top-4 right-4 text-white text-3xl cursor-pointer" onclick="closeModal()">&times;</span>
+          <img id="modalImage" src="" alt="" class="rounded-lg w-full max-h-[80vh] object-contain mx-auto">
+          <p id="modalCaption" class="text-white text-center mt-4 text-lg"></p>
+        </div>
+      </div>
+      <script>
+      function openModal(src, caption) {
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const modalCaption = document.getElementById('modalCaption');
+    
+        modal.classList.remove('hidden');
+        modalImg.src = src;
+        modalCaption.textContent = caption;
+      }
+    
+      function closeModal() {
+        document.getElementById('imageModal').classList.add('hidden');
+      }
+    
+      // Close modal when clicking the dark background
+      document.getElementById('imageModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeModal();
+        }
+      });
+    </script>
+    
+    <script>
+        function openModal(src, caption) {
+          const modal = document.getElementById('imageModal');
+          const modalImg = document.getElementById('modalImage');
+          const modalCaption = document.getElementById('modalCaption');
+      
+          modal.classList.remove('hidden');
+          modalImg.src = src;
+          modalCaption.textContent = caption;
+        }
+      
+        function closeModal() {
+          document.getElementById('imageModal').classList.add('hidden');
+        }
+      
+        // Close modal when clicking outside the image
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+          if (e.target === this) {
+            closeModal();
+          }
+        });
+      
+        // ✅ Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            closeModal();
+          }
+        });
+      </script>
+
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=ihaide/petspace" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
+
