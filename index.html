@@ -215,7 +215,18 @@
  <!-- Left here on friday nights -->
 
 
-
+<!-- Gallery Container -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
+  <!-- Repeat this block for each image -->
+  <div class="gallery-item cursor-pointer" onclick="openModal('images/rossie.jpeg', 'Rossie')">
+    <img src="images/rossie.jpeg" alt="Rossie" class="w-full h-72 object-cover rounded-lg shadow-lg">
+    <div class="p-4 bg-gray-50 rounded-b-lg">
+      <h3 class="font-semibold text-lg text-black">Rossie</h3>
+      <p class="text-sm text-black">Labradoodle</p>
+    </div>
+  </div>
+  <!-- Add more .gallery-item blocks here -->
+</div>
 
 
 
