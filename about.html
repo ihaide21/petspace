@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,5 +10,57 @@
     <h1>About Paws & Pixels</h1>
     <p>We capture pet personalities through photography!</p>
     <a href="index.html">Back to Home</a>
+</body>
+</html> -->
+
+<!-- new code for collage of pictures -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Paws & Pixels</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black">
+
+  <!-- Swiper Container -->
+  <div class="swiper mySwiper w-screen h-screen">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="images/Louie.jpeg" class="w-full h-full object-cover" alt="Dog 1" />
+      </div>
+      <div class="swiper-slide">
+        <img src="images/maggiestrawb.jpeg" class="w-full h-full object-cover" alt="Dog 2" />
+      </div>
+      <div class="swiper-slide">
+        <img src="images/leosnow.jpeg" class="w-full h-full object-cover" alt="Dog 3" />
+      </div>
+      <!-- Add more slides as needed -->
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="swiper-button-next text-white"></div>
+    <div class="swiper-button-prev text-white"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Swiper Initialization -->
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      keyboard: {
+        enabled: true,
+      }
+    });
+  </script>
 </body>
 </html>
