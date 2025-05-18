@@ -23,6 +23,10 @@
             background-position: center;
         }
     </style>
+<!-- adding this swiper's css and JS  -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
@@ -79,38 +83,47 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               
 <!-- rossie       -->
-                <div class="gallery-item cursor-pointer" onclick="openModal('images/rossie.jpeg', 'Leo')">
+                <!-- <div class="gallery-item cursor-pointer" onclick="openModal('images/rossie.jpeg', 'Leo')">
                     <img src="images/rossie.jpeg" alt="Mila" class="w-full h-[32rem] object-cover rounded-lg shadow-lg">
                     <div class="p-4 bg-gray-50 rounded-b-lg">
                       <h3 class="font-semibold text-lg text-black">Rossie</h3>
                       <p class="text-sm text-black">Labradoodle</p>
                     </div>
-                  </div>
-
-
+                  </div> -->
 <!-- gordongjumping -->
-                <div class="gallery-item cursor-pointer" onclick="openModal('images/new images to add/gordonjumping.jpeg', 'Poppy')">
+                <!-- <div class="gallery-item cursor-pointer" onclick="openModal('images/new images to add/gordonjumping.jpeg', 'Poppy')">
                     <img src ="images/new images to add/gordonjumping.jpeg" alt = "LeoinSnow" class = "w-full h-65 object-cover rounded-lg shadow-lg"> 
                     <div class="p-4 bg-gray-50">
                         <h3 class="font-semibold text-lg">Gordon</h3>
                         <p class="text-gray-600">German Shepherd</p>
                     </div>
-                </div>
-
+                </div> -->
 <!-- louie -->
-                <div class="gallery-item cursor-pointer" onclick="openModal('images/Louie.jpeg', 'Poppy')">
+                <!-- <div class="gallery-item cursor-pointer" onclick="openModal('images/Louie.jpeg', 'Poppy')">
                     <img src ="images/Louie.jpeg" alt = "LeoinSnow" class = "w-full h-65 object-cover  rounded-lg shadow-lg"> 
                     <div class="p-4 bg-gray-50">
                         <h3 class="font-semibold text-lg">Louie</h3>
                         <p class="text-gray-600">Mix puppy</p>
                     </div>
-                </div>
+                </div> -->
  <!-- Left here on friday nights -->
 
 
-
-            <!-- </div>
-        </div> -->
+ <!-- Replace your image gallery section with something like this: -->
+<!-- Carousel container -->
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/rossie.jpeg" alt="Image 1"></div>
+      <div class="swiper-slide"><img src="images/Louie.jpeg" alt="Image 2"></div>
+      <div class="swiper-slide"><img src="images/leosnow.jpeg" alt="Image 3"></div>
+      <!-- Add more slides as needed -->
+    </div>
+  
+    <!-- Optional navigation controls -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
     </section>
 
 
@@ -218,6 +231,20 @@
 <!-- <p style="...">Made with ...</p> -->
 
 
+<!-- Place this just before the closing </body> tag: this is for testing phot carasol -->
+<script>
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
 
 </body>
 </html>
