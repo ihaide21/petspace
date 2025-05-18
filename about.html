@@ -312,7 +312,21 @@
   </style>
 
   <!-- 2nd swiper 2 for 2nd carasol -->
-  <style>
+  <script>
+    const swiper2 = new Swiper(".mySwiper2", {
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination2",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next2",
+        prevEl: ".swiper-button-prev2",
+      },
+    });
+  </script>
+
+  <!-- <style>
     .swiper {
       width: 100%;
       max-width: 800px;
@@ -324,7 +338,7 @@
       height: 100%;
       object-fit: cover;
     }
-  </style>
+  </style> -->
 
 
 </body>
