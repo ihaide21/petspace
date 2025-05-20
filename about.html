@@ -137,53 +137,7 @@ class="bg-gray-50">
 
 
 
-    <!-- after fooder adding this to see if i works -->
-
-  
-<!-- adding till here -->
-    <script>
-        // Simple smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-
-<!-- ✅ 2. Add the Modal HTML (once at the bottom of <body>) -->
-    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm hidden flex justify-center items-center z-50">
-        <div class="relative max-w-4xl w-full px-4">
-          <span class="absolute top-4 right-4 text-white text-3xl cursor-pointer" onclick="closeModal()">&times;</span>
-          <img id="modalImage" src="" alt="" class="rounded-lg w-full max-h-[80vh] object-contain mx-auto">
-          <p id="modalCaption" class="text-white text-center mt-4 text-lg"></p>
-        </div>
-      </div>
-      <script>
-      function openModal(src, caption) {
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImage');
-        const modalCaption = document.getElementById('modalCaption');
-    
-        modal.classList.remove('hidden');
-        modalImg.src = src;
-        modalCaption.textContent = caption;
-      }
-    
-      function closeModal() {
-        document.getElementById('imageModal').classList.add('hidden');
-      }
-    
-      // Close modal when clicking the dark background
-      document.getElementById('imageModal').addEventListener('click', function(e) {
-        if (e.target === this) {
-          closeModal();
-        }
-      });
-    </script>
-    
+   
     
 
 
