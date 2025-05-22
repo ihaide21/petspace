@@ -1,2 +1,0 @@
-create me a website that takes in a list of words and organizes it alphabetically
-create me a very simple static pet photography website that I can clone to my github
