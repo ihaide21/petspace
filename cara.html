@@ -1,183 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    .gallery-item {
-      transition: all 0.3s ease;
-    }
-    .gallery-item:hover {
-      transform: scale(1.02);
-    }
-    .hero {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/cooperblur.jpeg');
-      background-size: cover;
-      background-position: center;
-    }
- 
-    .swiper {
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
-}
-
-.swiper-slide {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.swiper-slide img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 0.5rem;
-}
-/* till above line replaces swiper related css  */
-    .carousel-container {
-      perspective: 1000px;
-    }
-    .carousel-slide {
-      transition: transform 0.5s ease;
-      transform-style: preserve-3d;
-    }
-    .carousel-item {
-      backface-visibility: hidden;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-    }
-    .carousel-item.active {
-      opacity: 1;
-      position: relative;
-    }
-    .carousel-indicator {
-      transition: all 0.3s ease;
-    }
-    .carousel-indicator.active {
-      background-color: #3b82f6;
-      transform: scale(1.2);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Image Carousel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .carousel-container {
+            scroll-behavior: smooth;
+        }
+        .carousel-item {
+            flex: 0 0 auto;
+            transition: transform 0.3s ease;
+        }
+        .carousel-item:hover {
+            transform: scale(1.03);
+        }
+        .nav-btn {
+            transition: all 0.3s ease;
+        }
+        .nav-btn:hover {
+            transform: scale(1.1);
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .nav-btn:active {
+            transform: scale(0.95);    
+        }
+        #carouselTrack {
+          transition: transform 0.8s ease-in-out;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
-  <header class="hero h-96 flex items-center justify-center text-white text-center">
-    <div>
-      <h1 class="text-4xl font-bold">Carousel Page </h1>
-      <p class="mt-2">Welcome to my world of creativity and joy</p>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="w-full max-w-6xl mx-auto">
+        <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">Photo Gallery Carousel</h1>
+        
+        <div class="relative group">
+            <!-- Navigation Buttons -->
+            <button id="prevBtn" class="nav-btn absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black bg-opacity-50 text-white p-3 rounded-full ml-2 hover:bg-opacity-70">
+                <i class="fas fa-chevron-left text-xl"></i>
+            </button>
+            
+            <button id="nextBtn" class="nav-btn absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black bg-opacity-50 text-white p-3 rounded-full mr-2 hover:bg-opacity-70">
+                <i class="fas fa-chevron-right text-xl"></i>
+            </button>
+            
+            <!-- Carousel Container -->
+            <div class="carousel-container overflow-hidden relative">
+                <div id="carouselTrack" class="flex gap-4 py-4 px-2 transition-transform duration-300 ease-out">
+                    <!-- Images will be inserted here by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="flex justify-center mt-4 space-x-2">
+                <div id="scrollLeftIndicator" class="w-3 h-3 rounded-full bg-gray-300 opacity-50"></div>
+                <div id="scrollRightIndicator" class="w-3 h-3 rounded-full bg-blue-500"></div>
+            </div>
+        </div>
     </div>
-  </header>
 
-  <section class="max-w-4xl mx-auto px-4 py-12">
-    <div class="text-center mb-8">
-      <h2 class="text-3xl font-semibold">Meet My Pets</h2>
-      <p class="text-gray-600 mt-2">They bring color and chaos to my life</p>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sample image data (replace with your own images)
+            const images = [
+                {
+                    url: 'images/cooperblur.jpeg',
+                    alt: 'Cooper' 
+                },
+                {
+                  url: 'images/moominleodeceptionpass.jpeg',
+                  alt: 'Cooper' 
+                },
+                {
+                  url: 'images/brownileofighting.jpeg',
+                  alt: 'Cooper' 
+                },
+                {
+                  url: 'images/LeoPark.jpeg',
+                  alt: 'Cooper' 
+                },
+                {
+                  url: 'images/rossie.jpeg',
+                  alt: 'Cooper' 
+                },
+                {
+                  url: 'images/tipperserious.jpeg',
+                  alt: 'Cooper' 
+                },
+                {
+                  url: 'images/leo1.jpg',
+                  alt: 'Cooper' 
+                },
+                {
+                  url: 'images/Elmergrass.jpeg',
+                  alt: 'Cooper' 
+                }
+            ];
 
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="gallery-item cursor-pointer" onclick="openModal('images/louie1.jpg', 'Louie, my gentle golden retriever')">
-        <img src="images/Louie.jpeg" alt="Louie smiling in the garden" class="w-full h-64 object-cover rounded-lg shadow-md">
-      </div>
-      <div class="gallery-item cursor-pointer" onclick="openModal('images/louie2.jpg', 'Louie lounging in the sun')">
-        <img src="images/leo1.JPG" alt="Louie lounging in the sun" class="w-full h-64 object-cover rounded-lg shadow-md">
-      </div>
-      <div class="gallery-item cursor-pointer" onclick="openModal('images/cat1.jpg', 'Whiskers plotting mischief')">
-        <img src="images/moominleodeceptionpass.jpeg" alt="Whiskers plotting mischief" class="w-full h-64 object-cover rounded-lg shadow-md">
-      </div>
-    </div>
-  </section>
+            const carouselTrack = document.getElementById('carouselTrack');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const scrollLeftIndicator = document.getElementById('scrollLeftIndicator');
+            const scrollRightIndicator = document.getElementById('scrollRightIndicator');
+            
+            // Create carousel items
+            images.forEach((image, index) => {
+                const item = document.createElement('div');
+                item.className = 'carousel-item w-64 h-64 md:w-80 md:h-80 flex-shrink-0';
+                item.innerHTML = `
+                    <div class="relative h-full w-full overflow-hidden rounded-xl shadow-lg">
+                        <img src="${image.url}" alt="${image.alt}" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <span class="text-white font-medium">${image.alt}</span>
+                        </div>
+                    </div>
+                `;
+                carouselTrack.appendChild(item);
+            });
 
+            // Navigation functionality
+            let currentPosition = 0;
+            const itemWidth = 320; // Approximate width of each item including gap
+            const visibleItems = Math.floor(document.querySelector('.carousel-container').offsetWidth / itemWidth);
+            const maxPosition = images.length - visibleItems;
+            
+            function updateIndicators() {
+                if (currentPosition <= 0) {
+                    scrollLeftIndicator.classList.remove('bg-blue-500');
+                    scrollLeftIndicator.classList.add('bg-gray-300', 'opacity-50');
+                } else {
+                    scrollLeftIndicator.classList.add('bg-blue-500');
+                    scrollLeftIndicator.classList.remove('bg-gray-300', 'opacity-50');
+                }
+                
+                if (currentPosition >= maxPosition) {
+                    scrollRightIndicator.classList.remove('bg-blue-500');
+                    scrollRightIndicator.classList.add('bg-gray-300', 'opacity-50');
+                } else {
+                    scrollRightIndicator.classList.add('bg-blue-500');
+                    scrollRightIndicator.classList.remove('bg-gray-300', 'opacity-50');
+                }
+            }
 
+            let autoScroll;
+            function startAutoScroll() {
+              autoScroll = setInterval(() => {
+                currentPosition = (currentPosition + 1) > maxPosition ? 0 : currentPosition + 1;
+                carouselTrack.style.transform = `translateX(-${currentPosition * itemWidth}px)`;
+                updateIndicators();
+              }, 3000);
+            }
+            function stopAutoScroll() {
+             clearInterval(autoScroll);
+            }
+            // Start auto scroll
+            startAutoScroll();
 
+            // Pause on hover
+            carouselTrack.addEventListener('mouseenter', stopAutoScroll);
+            carouselTrack.addEventListener('mouseleave', startAutoScroll);
 
-  <!-- from here till footer is text with dogs name under Carousel  -->
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="images/cooperblur.jpeg" alt="Gallery image 1" />
-        <p class="mt-2 text-sm text-gray-700">Cooper</p>
-      </div>
-      <div class="swiper-slide">
-        <img src="images/leo1.JPG" alt="Gallery image 2" />
-        <p class="mt-2 text-sm text-gray-700">Leo</p>
-      </div>
-      <div class="swiper-slide">
-        <img src="images/moominleodeceptionpass.jpeg" alt="Gallery image 3" />
-        <p class="mt-2 text-sm text-gray-700">Moomin & Leo at Deception Pass</p>
-      </div>
-    </div>
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
-
-
-  <footer class="text-center py-6 text-gray-600">
-    <p>&copy; 2025 My Portfolio. All rights reserved.</p>
-  </footer>
-
-  <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex items-center justify-center z-50">
-    <div class="bg-white p-4 rounded-lg shadow-lg max-w-xl mx-auto text-center">
-      <img id="modalImage" src="" alt="Enlarged image" class="w-full h-auto rounded mb-4">
-      <p id="modalCaption" class="text-sm text-gray-700"></p>
-      <button onclick="closeModal()" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Close</button>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper(".mySwiper", {
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-
-    function openModal(src, caption) {
-      const modal = document.getElementById('imageModal');
-      const modalImg = document.getElementById('modalImage');
-      const modalCaption = document.getElementById('modalCaption');
-      modal.classList.remove('hidden');
-      modalImg.src = src;
-      modalCaption.textContent = caption;
-    }
-
-    function closeModal() {
-      document.getElementById('imageModal').classList.add('hidden');
-    }
-
-    document.getElementById('imageModal').addEventListener('click', function (e) {
-      if (e.target === this) closeModal();
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeModal();
-    });
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  </script>
+            function scrollCarousel(direction) {
+                if (direction === 'prev' && currentPosition > 0) {
+                    currentPosition--;
+                } else if (direction === 'next' && currentPosition < maxPosition) {
+                    currentPosition++;
+                }
+                
+                carouselTrack.style.transform = `translateX(-${currentPosition * itemWidth}px)`;
+                updateIndicators();
+            }
+            
+            prevBtn.addEventListener('click', () => scrollCarousel('prev'));
+            nextBtn.addEventListener('click', () => scrollCarousel('next'));
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    scrollCarousel('prev');
+                } else if (e.key === 'ArrowRight') {
+                    scrollCarousel('next');
+                }
+            });
+            
+            // Initialize
+            updateIndicators();
+            
+            // Touch support
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            carouselTrack.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, {passive: true});
+            
+            carouselTrack.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, {passive: true});
+            
+            function handleSwipe() {
+                const threshold = 50;
+                if (touchStartX - touchEndX > threshold) {
+                    scrollCarousel('next');
+                } else if (touchEndX - touchStartX > threshold) {
+                    scrollCarousel('prev');
+                }
+            }
+        });
+    </script>
 </body>
 </html>
