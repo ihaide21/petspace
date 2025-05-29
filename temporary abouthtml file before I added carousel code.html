@@ -19,7 +19,7 @@
         }
         .hero {
             /* height: 1000px; */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/cooperblur.jpeg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/Elmergrasscropped.jpeg');
             background-size: cover;
             background-position: center;
         }
@@ -32,11 +32,11 @@
 <body 
 
 class="bg-gray-50">
-    <!-- Navigation -->
+    <!-- Navigation Bar at the top -->
     <nav class="bg-white shadow-md sticky top-0 z-10"> 
-        <div class="container mx-auto px-6 py-4">
+        <div class="container mx-auto px-6 py-3">
             <div class="flex justify-between items-center">
-                <div class="text-2xl font-extrabold text-gray-900 font-serif tracking-tight"> 
+                <div class="text-2xl font-extrabold text-gray-900 font-nunito "> 
                   <!-- above line changes color to black for top-left corner text  -->
                     <i class="fas fa-paw mr-2 text-amber-500"></i>
                     Paws & Pixels
@@ -57,12 +57,16 @@ class="bg-gray-50">
     </nav>
 
 
-<section id="home" class="hero h-96 flex items-center justify-center text-center text-white">
-<!-- <section id="home" class="hero h-[32rem] flex items-center justify-center text-center text-white"> -->
+    <section id="home" class="hero h-[32rem] flex items-center justify-center text-center text-white">
     <div class="px-4">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Capturing Pet Personalities</h1>
-      <p class="text-xl mb-8">Professional photography for your furry friends</p>
-      
+        <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: hwb(36 7% 9%);">
+            Capturing Pet Personalities
+          </h1>
+
+      <!-- <p class="text-xl mb-8">Professional photography for your furry friends</p> -->
+      <p class="text-xl mb-8" style="color: #e79f31;">
+        Professional photography for your furry friends
+      </p>
       <!-- Replacing the original button with the Google Form link -->
       <a 
         href="https://docs.google.com/forms/d/e/1FAIpQLSeNS5sh6JhF11xpGHho2Mj7BCf-xR6KezvQ0cqM7F1_qsEDDw/viewform?usp=sharing" 
@@ -79,11 +83,10 @@ class="bg-gray-50">
   <section class="max-w-4xl mx-auto px-4 py-12">
     <div class="text-center mb-8">
       <h2 class="text-3xl font-semibold">Gallery</h2>
-      <!-- <p class="text-gray-600 mt-2">They bring color and chaos to my life</p> -->
     </div>
 
 
-    <div class="grid md:grid-cols-3 gap-6">
+    <!-- <div class="grid md:grid-cols-3 gap-6">
         <div class="gallery-item cursor-pointer" onclick="openModal('images/louie1.jpg', 'Louie, my gentle golden retriever')">
           <img src="images/Louie.jpeg" alt="Louie smiling in the garden" class="w-full h-64 object-cover rounded-lg shadow-md">
         </div>
@@ -94,7 +97,7 @@ class="bg-gray-50">
           <img src="images/moominleodeceptionpass.jpeg" alt="Whiskers plotting mischief" class="w-full h-64 object-cover rounded-lg shadow-md">
         </div>
       </div>
-    </section>
+    </section> -->
 
   <!-- This is the actual image carousel component: -->
   <div class="swiper mySwiper pb-12">
@@ -116,8 +119,12 @@ class="bg-gray-50">
         <p class="mt-2 text-sm text-gray-700"><strong>Leo & Mila</strong></p>
       </div>
       <div class="swiper-slide">
-        <img src="images/rossie.jpeg" alt="Gallery image 3" />
-        <p class="mt-2 text-sm text-gray-700"><strong>Rossie</strong></p>
+        <img src="images/Elmergrass.jpeg" alt="Gallery image 3" />
+        <p class="mt-2 text-sm text-gray-700"><strong>Tippet</strong></p>
+      </div>
+      <div class="swiper-slide">
+        <img src="images/baltograss.jpeg" alt="Gallery image 3" />
+        <p class="mt-2 text-sm text-gray-700"><strong>Balto</strong></p>
       </div>
     </div>
     <div class="swiper-pagination"></div>
