@@ -59,11 +59,11 @@
     </div>
   </nav>
 
-  <script>
+  <!-- <script>
     // Hamburger toggle
     document.getElementById('menu-toggle').addEventListener('click', function () {
       document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
+    }); -->
 
     // Highlight active link
     const currentPage = window.location.pathname.split("/").pop();
@@ -471,7 +471,14 @@
    class="fixed bottom-6 right-6 bg-amber-500 text-white px-4 py-3 rounded-full shadow-lg hover:bg-indigo-600 transition z-50 text-sm md:text-base font-semibold flex items-center">
   <i class="fas fa-calendar-alt mr-2"></i> Book Now
 </a>
+<!-- <script>
+  document.getElementById('menu-toggle').addEventListener('click', function () {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  });
+</script> -->
 <script>
+  // ✅ Mobile Menu Toggle (only one script needed)
   document.getElementById('menu-toggle').addEventListener('click', function () {
     const menu = document.getElementById('mobile-menu');
     menu.classList.toggle('hidden');
