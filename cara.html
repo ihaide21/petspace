@@ -93,7 +93,7 @@
     <div class="flex flex-col items-center justify-center p-4">
         <!-- Carousel Section -->
         <div class="w-full container mx-auto px-6"> <!-- MATCH NAV BAR WIDTH -->
-          <h1 class="text-3xl font-bold text-center mt-16 mb-8 text-gray-800">Photo Gallery Carousel</h1>
+          <h1 class="text-3xl font-bold text-center mt-16 mb-8 text-gray-800">Moments in Motion 🐾</h1>
       
           <div class="relative group">
             <!-- Navigation Buttons -->
@@ -144,20 +144,20 @@
                   alt: 'Cooper' 
                 },
                 {
-                  url: 'images/brownileofighting.jpeg',
+                  url: 'images/moomin.jpeg',
+                  alt: 'Cookie' 
+                },
+                {
+                  url: 'images/tippethappy.jpeg',
+                  alt: 'Tippet' 
+                },
+                {
+                  url: 'images/leocovered.jpeg',
                   alt: 'Cooper' 
                 },
                 {
-                  url: 'images/LeoPark.jpeg',
-                  alt: 'Cooper' 
-                },
-                {
-                  url: 'images/rossie.jpeg',
-                  alt: 'Cooper' 
-                },
-                {
-                  url: 'images/tipperserious.jpeg',
-                  alt: 'Cooper' 
+                  url: 'images/moomin+leo.jpeg',
+                  alt: 'Tippet' 
                 },
                 {
                   url: 'images/leo1.JPG',
@@ -166,6 +166,22 @@
                 {
                   url: 'images/Elmergrass.jpeg',
                   alt: 'Cooper' 
+                }, 
+                {
+                  url: 'images/new images to add/brisket1.jpeg',
+                  alt: 'Brisket' 
+                }, 
+                {
+                  url: 'images/new images to add/brisket2.jpeg',
+                  alt: 'Brisket' 
+                }, 
+                {
+                  url: 'images/Ripley.jpeg',
+                  alt: 'Ripley' 
+                }, 
+                {
+                  url: 'images/baltograss.jpeg',
+                  alt: 'Balto' 
                 }
             ];
 
@@ -220,7 +236,7 @@
                 currentPosition = (currentPosition + 1) > maxPosition ? 0 : currentPosition + 1;
                 carouselTrack.style.transform = `translateX(-${currentPosition * itemWidth}px)`;
                 updateIndicators();
-              }, 3000);
+              }, 2000);
             }
             function stopAutoScroll() {
              clearInterval(autoScroll);
